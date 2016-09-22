@@ -2,9 +2,11 @@
 
 	<div class="row">
 		<div class="col-sm-12">
-
 			<?php 
 				if ( have_posts() ) : while ( have_posts() ) : the_post();
+					if ( has_post_thumbnail() ) {
+					  the_post_thumbnail();
+					} 
 					get_template_part( 'content-single', get_post_format() );
 				endwhile; endif; 
 			?>
